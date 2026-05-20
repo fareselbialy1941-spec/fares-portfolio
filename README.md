@@ -1,23 +1,16 @@
-# Fares Abdelaziz Portfolio - GitHub Pages
+# Fares Abdelaziz Portfolio Website
 
-## How to publish
+This ZIP includes:
+- `index.html`
+- `profile.jpg`
 
-1. Create a new GitHub repository, for example:
-   `fares-portfolio`
+## Upload to GitHub
 
-2. Upload these files to the repository root:
-   - `index.html`
-   - `Fares-Abdelaziz-AI-Video-Designer-Portfolio.pdf`
+Upload both files to the root of the repository:
+- `index.html`
+- `profile.jpg`
 
-3. Open:
-   Settings → Pages
+If GitHub asks about replacing `index.html`, replace it and commit changes.
 
-4. Under "Build and deployment":
-   - Source: Deploy from a branch
-   - Branch: main
-   - Folder: /root
-
-5. Save and wait for GitHub Pages to generate the public link.
-
-Expected link format:
-`https://YOUR-USERNAME.github.io/fares-portfolio/`
+After upload, wait 1-3 minutes and open:
+`https://fareselbialy1941-spec.github.io/fares-portfolio/`
