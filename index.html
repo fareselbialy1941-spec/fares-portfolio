@@ -4,222 +4,559 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fares Abdelaziz | AI Video Designer</title>
-  <meta name="description" content="Portfolio of Fares Abdelaziz, AI Video Designer." />
+  <meta name="description" content="Fares Abdelaziz portfolio — AI Video Designer for brands, ads, campaigns, and visual storytelling." />
+
   <style>
-    :root {
-      --bg: #061322;
-      --card: #0c1b2e;
-      --gold: #d9b45d;
-      --text: #ffffff;
-      --muted: #c7d3e1;
-      --teal: #24d6c8;
-      --line: rgba(217, 180, 93, 0.55);
+    :root{
+      --bg:#06111f;
+      --bg2:#0b1b30;
+      --panel:#0e2137;
+      --gold:#d9b45d;
+      --gold2:#ffe29b;
+      --teal:#23d8c7;
+      --text:#ffffff;
+      --muted:#b9c9dc;
+      --line:rgba(217,180,93,.38);
+      --shadow:0 18px 60px rgba(0,0,0,.30);
     }
 
-    * { box-sizing: border-box; }
+    *{
+      box-sizing:border-box;
+    }
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--text);
       background:
-        radial-gradient(circle at 82% 18%, rgba(36, 214, 200, 0.09), transparent 34%),
-        linear-gradient(135deg, #050d19 0%, var(--bg) 45%, #0b1b30 100%);
-      color: var(--text);
-      min-height: 100vh;
+        radial-gradient(circle at 82% 8%, rgba(35,216,199,.11), transparent 26%),
+        radial-gradient(circle at 8% 24%, rgba(217,180,93,.10), transparent 26%),
+        linear-gradient(135deg,#040b16 0%,var(--bg) 50%,#0a182b 100%);
+      overflow-x:hidden;
     }
 
-    .top-bar {
-      width: 100%;
-      height: 8px;
-      background: linear-gradient(90deg, var(--gold), transparent);
+    body:before{
+      content:"";
+      position:fixed;
+      inset:0;
+      pointer-events:none;
+      opacity:.25;
+      background:
+        linear-gradient(
+          110deg,
+          transparent 0 18%,
+          rgba(37,122,190,.35) 18.2%,
+          transparent 18.5% 38%,
+          rgba(37,122,190,.32) 38.2%,
+          transparent 38.5% 58%,
+          rgba(37,122,190,.25) 58.2%,
+          transparent 58.5%
+        );
     }
 
-    .wrap {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 56px 22px 40px;
+    .gold-strip{
+      position:fixed;
+      left:0;
+      top:0;
+      bottom:0;
+      width:12px;
+      background:linear-gradient(180deg,var(--gold),#f4d98c,var(--gold));
+      z-index:10;
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 28px;
-      align-items: center;
-      margin-bottom: 28px;
+    .container{
+      width:min(1180px, calc(100% - 48px));
+      margin:0 auto;
     }
 
-    .eyebrow {
-      color: var(--gold);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
+    header{
+      position:sticky;
+      top:0;
+      z-index:9;
+      backdrop-filter:blur(14px);
+      background:rgba(6,17,31,.78);
+      border-bottom:1px solid rgba(217,180,93,.18);
     }
 
-    h1 {
-      font-size: clamp(42px, 6vw, 78px);
-      line-height: 0.95;
-      margin: 0 0 10px;
-      letter-spacing: -0.04em;
+    nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:16px 0;
     }
 
-    h2 {
-      color: var(--gold);
-      font-size: clamp(26px, 3vw, 42px);
-      line-height: 1.1;
-      margin: 0 0 22px;
+    .brand{
+      font-weight:900;
+      letter-spacing:.04em;
+      color:var(--gold2);
+      text-transform:uppercase;
+      font-size:14px;
     }
 
-    p {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.55;
-      margin: 0;
+    .navlinks{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:flex-end;
     }
 
-    .badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
+    .navlinks a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:700;
+      font-size:13px;
+      padding:8px 10px;
+      border-radius:999px;
     }
 
-    .badge {
-      border: 1px solid var(--line);
-      color: #ffe7a8;
-      border-radius: 999px;
-      padding: 9px 14px;
-      font-size: 13px;
-      font-weight: 700;
-      background: rgba(217, 180, 93, 0.05);
+    .navlinks a:hover{
+      color:#06111f;
+      background:var(--teal);
     }
 
-    .card {
-      border: 1px solid var(--line);
-      background: rgba(12, 27, 46, 0.82);
-      border-radius: 28px;
-      padding: 30px;
-      box-shadow: 0 18px 60px rgba(0,0,0,.32);
+    section{
+      padding:82px 0;
+      position:relative;
     }
 
-    .stat {
-      display: flex;
-      gap: 14px;
-      align-items: center;
-      margin-bottom: 14px;
+    .hero{
+      min-height:calc(100vh - 65px);
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:48px;
+      align-items:center;
+      padding-top:64px;
+      padding-bottom:64px;
     }
 
-    .stat-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: var(--teal);
-      color: #05111f;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-      flex: none;
+    .eyebrow{
+      color:var(--gold);
+      font-weight:900;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      font-size:14px;
+      margin-bottom:16px;
     }
 
-    .stat-title {
-      font-size: 26px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
+    h1{
+      font-size:clamp(48px,7vw,86px);
+      line-height:.93;
+      margin:0 0 10px;
+      letter-spacing:-.05em;
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
+    .subtitle{
+      color:var(--gold2);
+      font-size:clamp(28px,4vw,46px);
+      font-weight:900;
+      margin:0 0 22px;
+      letter-spacing:-.03em;
     }
 
-    a.button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 17px;
-      border-radius: 12px;
-      background: transparent;
-      border: 1px solid var(--teal);
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 14px;
-      min-width: 150px;
+    .lead{
+      max-width:650px;
+      color:#d5e2f0;
+      font-size:20px;
+      line-height:1.58;
+      margin:0;
     }
 
-    a.button.primary {
-      background: var(--teal);
-      color: #061322;
-      border-color: var(--teal);
+    .badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:26px;
     }
 
-    .pdf-panel {
-      margin-top: 28px;
-      border: 1px solid rgba(217,180,93,.45);
-      border-radius: 22px;
-      overflow: hidden;
-      background: #0b1727;
+    .badge{
+      border:1px solid var(--line);
+      color:#ffe9aa;
+      background:rgba(217,180,93,.06);
+      border-radius:999px;
+      padding:10px 14px;
+      font-weight:900;
+      font-size:13px;
     }
 
-    .pdf-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      padding: 16px 18px;
-      border-bottom: 1px solid rgba(217,180,93,.25);
+    .hero-card,
+    .card,
+    .case-card,
+    .stat-card,
+    .contact-panel{
+      border:1px solid var(--line);
+      background:linear-gradient(145deg,rgba(16,41,67,.92),rgba(11,27,48,.88));
+      box-shadow:var(--shadow);
+      border-radius:28px;
     }
 
-    .pdf-head strong {
-      color: var(--gold);
+    .hero-card{
+      padding:34px;
     }
 
-    iframe {
-      width: 100%;
-      height: 82vh;
-      border: 0;
-      display: block;
-      background: #111;
+    .stat-head{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-bottom:16px;
     }
 
-    footer {
-      color: #8ea3bc;
-      font-size: 12px;
-      margin-top: 26px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
+    .teal-icon{
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      color:#04111d;
+      background:var(--teal);
+      font-weight:900;
+      flex:0 0 auto;
     }
 
-    @media (max-width: 820px) {
-      .hero {
-        grid-template-columns: 1fr;
+    .hero-card h3{
+      font-size:28px;
+      line-height:1.1;
+      margin:0;
+    }
+
+    .hero-card p,
+    .card p,
+    .case-card p,
+    .stat-card p,
+    .contact-panel p{
+      color:var(--muted);
+      line-height:1.55;
+      margin:0;
+      font-size:16px;
+    }
+
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      text-decoration:none;
+      color:#ffffff;
+      border:1px solid var(--teal);
+      border-radius:13px;
+      padding:13px 18px;
+      min-width:150px;
+      font-weight:900;
+      font-size:14px;
+      transition:.2s ease;
+      background:rgba(35,216,199,.05);
+    }
+
+    .btn .click{
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:var(--teal);
+      color:#06111f;
+      font-weight:900;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+      background:rgba(35,216,199,.15);
+    }
+
+    .btn.gold{
+      border-color:var(--gold);
+      background:rgba(217,180,93,.10);
+      color:#fff4cf;
+    }
+
+    .section-title{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:28px;
+    }
+
+    .section-title h2{
+      font-size:clamp(32px,4vw,54px);
+      line-height:1;
+      margin:0;
+      letter-spacing:-.04em;
+    }
+
+    .section-title p{
+      max-width:520px;
+      color:var(--muted);
+      line-height:1.55;
+      margin:0;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card,
+    .stat-card{
+      padding:24px;
+    }
+
+    .num{
+      color:var(--gold);
+      font-size:20px;
+      font-weight:900;
+      margin-bottom:18px;
+    }
+
+    .card h3,
+    .case-card h3,
+    .stat-card h3{
+      margin:0 0 12px;
+      font-size:22px;
+      line-height:1.15;
+    }
+
+    .workflow{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:14px;
+      counter-reset:step;
+    }
+
+    .flow-item{
+      border:1px solid rgba(217,180,93,.32);
+      background:rgba(16,41,67,.78);
+      border-radius:22px;
+      padding:20px;
+      min-height:155px;
+    }
+
+    .flow-item:before{
+      counter-increment:step;
+      content:"0" counter(step);
+      display:block;
+      color:var(--teal);
+      font-weight:900;
+      margin-bottom:14px;
+    }
+
+    .flow-item h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+
+    .flow-item p{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+      margin:0;
+    }
+
+    .case-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .case-card{
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      min-height:280px;
+    }
+
+    .case-top{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:14px;
+    }
+
+    .case-type{
+      color:var(--teal);
+      font-weight:900;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .case-number{
+      color:var(--gold);
+      font-weight:900;
+    }
+
+    .case-meta{
+      display:grid;
+      gap:9px;
+      margin:18px 0 0;
+    }
+
+    .meta-line{
+      color:#dce9f6;
+      font-size:14px;
+      line-height:1.45;
+    }
+
+    .meta-line strong{
+      color:var(--gold2);
+    }
+
+    .case-card .buttons{
+      margin-top:auto;
+      padding-top:20px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:20px;
+      align-items:stretch;
+    }
+
+    .big-stat{
+      font-size:clamp(42px,5vw,72px);
+      font-weight:900;
+      color:var(--gold2);
+      line-height:.95;
+      margin-bottom:14px;
+      letter-spacing:-.05em;
+    }
+
+    .mini-list{
+      display:grid;
+      gap:12px;
+    }
+
+    .mini{
+      border:1px solid rgba(35,216,199,.32);
+      background:rgba(35,216,199,.06);
+      padding:16px;
+      border-radius:18px;
+      color:#d9f8f5;
+      font-weight:800;
+    }
+
+    .contact-panel{
+      text-align:center;
+      max-width:850px;
+      margin:0 auto;
+      padding:44px;
+    }
+
+    .contact-panel h2{
+      margin:0 0 14px;
+      font-size:clamp(32px,4vw,56px);
+      letter-spacing:-.04em;
+    }
+
+    footer{
+      padding:24px 0 38px;
+      color:#8fa4bc;
+      font-size:12px;
+      text-align:center;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    @media(max-width:980px){
+      .hero,
+      .stats{
+        grid-template-columns:1fr;
       }
-      .card {
-        padding: 24px;
+
+      .grid-3,
+      .workflow,
+      .case-grid{
+        grid-template-columns:1fr 1fr;
       }
-      iframe {
-        height: 72vh;
+
+      .section-title{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+    }
+
+    @media(max-width:620px){
+      .container{
+        width:min(100% - 30px,1180px);
+      }
+
+      .navlinks{
+        display:none;
+      }
+
+      section{
+        padding:56px 0;
+      }
+
+      .hero{
+        gap:26px;
+      }
+
+      .hero-card,
+      .contact-panel{
+        padding:24px;
+      }
+
+      .grid-3,
+      .workflow,
+      .case-grid{
+        grid-template-columns:1fr;
+      }
+
+      .btn{
+        width:100%;
       }
     }
   </style>
 </head>
-<body>
-  <div class="top-bar"></div>
 
-  <main class="wrap">
-    <section class="hero">
+<body>
+  <div class="gold-strip"></div>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Fares Abdelaziz</div>
+
+        <div class="navlinks">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#process">Workflow</a>
+          <a href="#cases">Case Studies</a>
+          <a href="#audience">Audience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" id="about">
       <div>
         <div class="eyebrow">Portfolio</div>
+
         <h1>Fares Abdelaziz</h1>
-        <h2>AI Video Designer</h2>
-        <p>
-          I design AI-powered videos for brands, ads, campaigns, and visual storytelling —
-          from concept and prompts to motion, editing, and final delivery.
+
+        <div class="subtitle">AI Video Designer</div>
+
+        <p class="lead">
+          I plan, design, animate, and deliver AI-powered video content for brands,
+          ads, campaigns, and visual storytelling — from concept and prompts to final delivery.
         </p>
+
         <div class="badges">
           <span class="badge">AI Video Production</span>
           <span class="badge">Motion Direction</span>
@@ -227,36 +564,321 @@
         </div>
       </div>
 
-      <aside class="card">
-        <div class="stat">
-          <div class="stat-icon">↗</div>
-          <div class="stat-title">1M+ YouTube Subscribers</div>
+      <aside class="hero-card">
+        <div class="stat-head">
+          <span class="teal-icon">↗</span>
+          <h3>1M+ YouTube Subscribers</h3>
         </div>
+
         <p>
-          Real audience experience across short-form video platforms.
-          Brand ads and sponsored content are available on my pages.
+          Real audience experience across short-form video platforms. Brand ads and sponsored
+          content are available on my pages.
         </p>
-        <div class="actions">
-          <a class="button" href="https://www.youtube.com/@Fow2sh2" target="_blank" rel="noopener">↗ YouTube</a>
-          <a class="button" href="https://www.tiktok.com/@fow2sh.masr?_r=1&_t=ZS-96UmdoiNcKG" target="_blank" rel="noopener">↗ TikTok</a>
+
+        <div class="buttons">
+          <a class="btn" href="https://www.youtube.com/@Fow2sh2" target="_blank" rel="noopener">
+            <span class="click">↗</span>
+            Click Here
+          </a>
+
+          <a class="btn" href="https://www.tiktok.com/@fow2sh.masr?_r=1&_t=ZS-96UmdoiNcKG" target="_blank" rel="noopener">
+            <span class="click">↗</span>
+            TikTok Profile
+          </a>
         </div>
       </aside>
     </section>
 
-    <section class="pdf-panel">
-      <div class="pdf-head">
-        <strong>Portfolio PDF</strong>
-        <div class="actions" style="margin:0;">
-          <a class="button primary" href="Fares-Abdelaziz-AI-Video-Designer-Portfolio.pdf" target="_blank">↗ View PDF</a>
-          <a class="button" href="Fares-Abdelaziz-AI-Video-Designer-Portfolio.pdf" download>↓ Download</a>
-        </div>
+    <section class="container" id="services">
+      <div class="section-title">
+        <h2>What I Create</h2>
+
+        <p>
+          Clear visual production services for brands that need AI-powered video content ready
+          for social platforms and campaigns.
+        </p>
       </div>
-      <iframe src="Fares-Abdelaziz-AI-Video-Designer-Portfolio.pdf" title="Fares Abdelaziz Portfolio PDF"></iframe>
+
+      <div class="grid-3">
+        <article class="card">
+          <div class="num">01</div>
+          <h3>AI Image Design</h3>
+          <p>
+            Designing cinematic visual frames, characters, products, brand scenes, and campaign
+            visuals with controlled style and consistency.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="num">02</div>
+          <h3>Prompt Direction</h3>
+          <p>
+            Writing structured prompts that define camera, lighting, action, style, continuity,
+            and production rules for image and video tools.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="num">03</div>
+          <h3>Motion & Editing</h3>
+          <p>
+            Turning still frames into dynamic video scenes, then preparing the final output for
+            ads, reels, YouTube, TikTok, and campaigns.
+          </p>
+        </article>
+      </div>
     </section>
 
-    <footer>
-      Fares Abdelaziz | AI Video Designer
-    </footer>
+    <section class="container" id="process">
+      <div class="section-title">
+        <h2>Workflow</h2>
+
+        <p>
+          A practical process that helps each project move from idea to usable video content
+          without losing the visual direction.
+        </p>
+      </div>
+
+      <div class="workflow">
+        <div class="flow-item">
+          <h3>Brief</h3>
+          <p>Understand the brand, goal, audience, platform, and required final format.</p>
+        </div>
+
+        <div class="flow-item">
+          <h3>Visual Plan</h3>
+          <p>Define the scene direction, mood, camera logic, and visual references.</p>
+        </div>
+
+        <div class="flow-item">
+          <h3>AI Images</h3>
+          <p>Create keyframes and visual assets with consistency and production control.</p>
+        </div>
+
+        <div class="flow-item">
+          <h3>Motion</h3>
+          <p>Animate the visuals using clear movement prompts and stable continuity.</p>
+        </div>
+
+        <div class="flow-item">
+          <h3>Delivery</h3>
+          <p>Prepare the final video output for social media, ads, or campaign usage.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="cases">
+      <div class="section-title">
+        <h2>Selected Case Studies</h2>
+
+        <p>
+          Four work groups collected in one section so clients can quickly understand the project
+          type, role, output, and review link.
+        </p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card">
+          <div class="case-top">
+            <div class="case-type">Game Visuals</div>
+            <div class="case-number">01</div>
+          </div>
+
+          <h3>Game Characters</h3>
+
+          <p>
+            Character-focused visuals created for game-style cinematic content and visual storytelling.
+          </p>
+
+          <div class="case-meta">
+            <div class="meta-line">
+              <strong>Role:</strong> Character visuals, prompt direction, style control.
+            </div>
+
+            <div class="meta-line">
+              <strong>Output:</strong> Visual assets ready for animation and scene building.
+            </div>
+          </div>
+
+          <div class="buttons">
+            <a class="btn gold" href="https://drive.google.com/drive/folders/1nzcpxJIsPPb8bA2mO2eNPQbclb2KeC98?usp=drive_link" target="_blank" rel="noopener">
+              <span class="click">↗</span>
+              Click Here
+            </a>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-top">
+            <div class="case-type">Brand Campaign</div>
+            <div class="case-number">02</div>
+          </div>
+
+          <h3>Tawasol Riyadh</h3>
+
+          <p>
+            AI video and visual ad direction for a Saudi tracking and transport service brand.
+          </p>
+
+          <div class="case-meta">
+            <div class="meta-line">
+              <strong>Role:</strong> Visual ideas, ad scenes, image/video prompt direction.
+            </div>
+
+            <div class="meta-line">
+              <strong>Output:</strong> Campaign-ready visuals and short-form advertising content.
+            </div>
+          </div>
+
+          <div class="buttons">
+            <a class="btn gold" href="https://drive.google.com/drive/folders/1lnLSIJDbfJeXOmyt6grzIO9Cx6ka7qoy?usp=drive_link" target="_blank" rel="noopener">
+              <span class="click">↗</span>
+              Click Here
+            </a>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-top">
+            <div class="case-type">ERP Ads</div>
+            <div class="case-number">03</div>
+          </div>
+
+          <h3>Rasayd ERP</h3>
+
+          <p>
+            Advertising visuals for Rasayd, focused on business value, software benefits,
+            and social ad clarity.
+          </p>
+
+          <div class="case-meta">
+            <div class="meta-line">
+              <strong>Role:</strong> Creative direction, AI visuals, video ad structure.
+            </div>
+
+            <div class="meta-line">
+              <strong>Output:</strong> Ad-ready scenes and visual assets for business audiences.
+            </div>
+          </div>
+
+          <div class="buttons">
+            <a class="btn gold" href="https://drive.google.com/drive/folders/1Pu8kClLcuQ2uFlZ_EzXjRX2nT7ksHFLL?usp=drive_link" target="_blank" rel="noopener">
+              <span class="click">↗</span>
+              Click Here
+            </a>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-top">
+            <div class="case-type">Mixed Works</div>
+            <div class="case-number">04</div>
+          </div>
+
+          <h3>Video Works</h3>
+
+          <p>
+            A collection of different AI video experiments, campaign visuals, edits, and visual
+            production samples.
+          </p>
+
+          <div class="case-meta">
+            <div class="meta-line">
+              <strong>Role:</strong> AI design, animation direction, editing support.
+            </div>
+
+            <div class="meta-line">
+              <strong>Output:</strong> Multiple video samples across styles and use cases.
+            </div>
+          </div>
+
+          <div class="buttons">
+            <a class="btn gold" href="https://drive.google.com/drive/folders/11_cvXpjiqBGHls4v5BHvn6186lAZuX-n?usp=drive_link" target="_blank" rel="noopener">
+              <span class="click">↗</span>
+              Click Here
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="audience">
+      <div class="section-title">
+        <h2>Audience Advantage</h2>
+
+        <p>
+          Alongside AI video design, I bring practical experience with short-form platforms
+          and audience-driven delivery.
+        </p>
+      </div>
+
+      <div class="stats">
+        <article class="stat-card">
+          <div class="big-stat">1M+</div>
+
+          <h3>YouTube Subscribers</h3>
+
+          <p>
+            This experience helps me understand pacing, hooks, viewer attention, visual clarity,
+            and platform-ready delivery for brand and advertising content.
+          </p>
+
+          <div class="buttons">
+            <a class="btn" href="https://www.youtube.com/@Fow2sh2" target="_blank" rel="noopener">
+              <span class="click">↗</span>
+              Click Here
+            </a>
+
+            <a class="btn" href="https://www.tiktok.com/@fow2sh.masr?_r=1&_t=ZS-96UmdoiNcKG" target="_blank" rel="noopener">
+              <span class="click">↗</span>
+              TikTok Profile
+            </a>
+          </div>
+        </article>
+
+        <div class="mini-list">
+          <div class="mini">Brand ads and sponsored content available on my pages.</div>
+          <div class="mini">Platform-aware video pacing for YouTube, TikTok, Reels, and social campaigns.</div>
+          <div class="mini">AI visual production combined with real audience understanding.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <div class="contact-panel">
+        <div class="eyebrow">Start a Project</div>
+
+        <h2>
+          Let’s create AI video content that is clear, watchable, and ready to publish.
+        </h2>
+
+        <p>
+          Review the selected work folders, then contact me with the project goal, platform,
+          duration, and style you want to achieve.
+        </p>
+
+        <div class="buttons" style="justify-content:center">
+          <a class="btn gold" href="#cases">
+            <span class="click">↗</span>
+            View Work
+          </a>
+
+          <a class="btn" href="https://www.youtube.com/@Fow2sh2" target="_blank" rel="noopener">
+            <span class="click">↗</span>
+            YouTube
+          </a>
+
+          <a class="btn" href="https://www.tiktok.com/@fow2sh.masr?_r=1&_t=ZS-96UmdoiNcKG" target="_blank" rel="noopener">
+            <span class="click">↗</span>
+            TikTok
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    Fares Abdelaziz | AI Video Designer
+  </footer>
 </body>
 </html>
